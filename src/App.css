@@ -1,0 +1,266 @@
+/* Global App Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: #e2e8f0;
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 50%, #3d4663 100%);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.scroll-app {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.scroll-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Background Colors */
+.home-section {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 50%, #3d4663 100%);
+    padding-top: 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/home.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.home-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.section-gallery {
+    background: linear-gradient(135deg, #2d3548 0%, #3d4663 100%);
+    color: #f8fafc;
+    padding: 2rem 0;
+}
+
+.section-about {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 100%);
+    color: #f8fafc;
+}
+
+.section-projects {
+    background: linear-gradient(135deg, #2d3548 0%, #3d4663 100%);
+    color: #f8fafc;
+}
+
+.section-gallery {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 100%);
+    color: #f8fafc;
+}
+
+.section-testimonials {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 100%);
+    color: #f8fafc;
+}
+
+.section-specifications {
+    background: linear-gradient(135deg, #2d3548 0%, #3d4663 100%);
+    color: #f8fafc;
+    padding: 2rem 0;
+}
+
+.section-contact {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 100%);
+    color: #f8fafc;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 1400px;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+}
+
+/* Modern Utility Styles */
+.home1 {
+    background: linear-gradient(135deg, rgba(26,31,46,0.95) 0%, rgba(45,53,72,0.95) 100%);
+    padding-top: 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    color: #f8fafc;
+}
+
+.brs {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #8b7355 50%, transparent 100%);
+    margin: 3rem 0;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modern Color Variables */
+:root {
+    --primary: #8b7355;
+    --primary-dark: #6b5a45;
+    --secondary: #d4a574;
+    --accent: #f59e0b;
+    --dark: #1a1f2e;
+    --dark-lighter: #2d3548;
+    --dark-lightest: #3d4663;
+    --light: #f8fafc;
+    --light-darker: #e2e8f0;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border: #3d4663;
+}
+
+/* Flexible Responsive Design - Maintains Design Integrity */
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 15px;
+    }
+    
+    .section-content {
+        max-width: 1100px;
+        padding: 3.5rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .section-content {
+        max-width: 950px;
+        padding: 3rem 1.5rem;
+    }
+    
+    .scroll-section {
+        min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .scroll-section {
+        min-height: 100vh;
+        padding: 0.5rem 0;
+    }
+    
+    .section-content {
+        max-width: 100%;
+        padding: 2.5rem 1rem;
+    }
+    
+    .home-section {
+        padding-top: 0;
+    }
+    
+    .section-about,
+    .section-projects,
+    .section-whychoose,
+    .section-specifications,
+    .section-contact {
+        padding: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .section-content {
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .scroll-section {
+        min-height: 100vh;
+        padding: 0.25rem 0;
+    }
+    
+    .section-content {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .home-section {
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .section-content {
+        padding: 1.25rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .section-content {
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* Ultra-wide screens - Maintain design integrity */
+@media screen and (min-width: 1400px) {
+    .section-content {
+        max-width: 1400px;
+        padding: 4rem 2rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .section-content {
+        max-width: 1600px;
+        padding: 4.5rem 2.5rem;
+    }
+}

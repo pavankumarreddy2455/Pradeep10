@@ -1,0 +1,374 @@
+/* Full-Page Scroll Container */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.scroll-container {
+    position: relative;
+    width: 100%;
+}
+
+.scroll-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scroll Navigation Dots */
+.scroll-dots {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d4d4d0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.scroll-dot:hover {
+    background-color: #8b7355;
+    transform: scale(1.3);
+}
+
+.scroll-dot.active {
+    background-color: #8b7355;
+    width: 30px;
+    border-radius: 6px;
+}
+
+.scroll-dot-label {
+    position: absolute;
+    right: 20px;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: #2c2c2c;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+.scroll-dot:hover .scroll-dot-label {
+    opacity: 1;
+}
+
+/* Smooth Section Transitions */
+.scroll-section.active {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile Scroll Navigation */
+@media screen and (max-width: 768px) {
+    .scroll-dots {
+        right: 15px;
+        gap: 12px;
+    }
+
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .scroll-dot.active {
+        width: 20px;
+    }
+
+    .scroll-dot-label {
+        display: none;
+    }
+}
+
+/* Section Styling */
+.section-content {
+    width: 100%;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #2c2c2c;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555555;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* Home Section Hero Styling */
+.home-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+                url('/home.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.home-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.home-title {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.home-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.mouse {
+    width: 24px;
+    height: 36px;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+
+.wheel {
+    width: 2px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Section Backgrounds */
+.section-about {
+    background-color: #fafaf8;
+}
+
+.section-projects {
+    background-color: #ffffff;
+}
+
+.section-gallery {
+    background-color: #fafaf8;
+}
+
+.section-testimonials {
+    background-color: #fafaf8;
+}
+
+.section-contact {
+    background-color: #ffffff;
+}
+
+/* Mobile Responsive Optimization */
+@media screen and (max-width: 1024px) {
+    .scroll-section {
+        padding-top: 50px;
+    }
+
+    .section-content {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .scroll-dots {
+        right: 20px;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-section {
+        padding-top: 45px;
+        min-height: auto;
+        padding-bottom: 3rem;
+    }
+
+    .section-content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .scroll-dots {
+        right: 15px;
+        gap: 12px;
+    }
+
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .scroll-dot.active {
+        width: 20px;
+    }
+
+    .home-section {
+        min-height: 70vh;
+    }
+
+    .home-title {
+        font-size: 2.5rem;
+    }
+
+    .home-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .scroll-section {
+        padding-top: 40px;
+        min-height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .section-content {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .scroll-dots {
+        right: 10px;
+        gap: 10px;
+    }
+
+    .scroll-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scroll-dot.active {
+        width: 16px;
+    }
+
+    .home-section {
+        min-height: 60vh;
+    }
+
+    .home-title {
+        font-size: 1.8rem;
+    }
+
+    .home-subtitle {
+        font-size: 1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 15px;
+        gap: 4px;
+    }
+
+    .scroll-indicator p {
+        font-size: 0.8rem;
+    }
+
+    .mouse {
+        width: 18px;
+        height: 28px;
+    }
+}

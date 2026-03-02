@@ -1,0 +1,658 @@
+/* Contact Page Styles */
+
+.contact-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 50%, #3d4663 100%);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-section > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #8b7355;
+    margin-bottom: 1rem;
+}
+
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #8b7355 50%, transparent 100%);
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Form Styles */
+.contact-form {
+    margin-top: 2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #d4a574;
+    margin-bottom: 0.5rem;
+}
+
+.form-group label::after {
+    content: ' *';
+    color: #d32f2f;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(139, 115, 85, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    font-family: inherit;
+    color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #cbd5e1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b7355;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.2);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #d32f2f;
+    background: rgba(211, 47, 47, 0.1);
+}
+
+.error-text {
+    display: block;
+    color: #f87171;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #8b7355, #d4a574);
+    color: #ffffff;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #6b5a45, #c19660);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.contact-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.contact-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-right-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.contact-right-content .info-section {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Directors Grid Styles - Enhanced 2x2 Layout */
+.directors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+
+.director-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.director-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 115, 85, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.director-card:hover::before {
+    left: 100%;
+}
+
+.director-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(139, 115, 85, 0.3);
+    border-color: rgba(139, 115, 85, 0.4);
+}
+
+.director-card.featured {
+    background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(139, 115, 85, 0.1));
+    border-color: rgba(139, 115, 85, 0.4);
+    box-shadow: 0 15px 30px rgba(139, 115, 85, 0.2);
+}
+
+.director-card.featured:hover {
+    box-shadow: 0 25px 50px rgba(139, 115, 85, 0.4);
+}
+
+.director-avatar {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8b7355, #d4a574);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.director-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.director-info h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #8b7355;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.director-info p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.director-contact {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: auto;
+}
+
+.director-contact a {
+    display: inline-block;
+    background: linear-gradient(135deg, #8b7355, #d4a574);
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.director-contact a:hover {
+    background: linear-gradient(135deg, #6b5a45, #c19660);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 115, 85, 0.3);
+}
+
+/* Contact Items Enhanced */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 3px solid #8b7355;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    border-left-color: #d4a574;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 115, 85, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.contact-info-text {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info-text strong {
+    display: block;
+    color: #d4a574;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-text a {
+    color: #f8fafc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-info-text a:hover {
+    color: #d4a574;
+    text-decoration: underline;
+}
+
+.contact-info-text p {
+    color: #e2e8f0;
+    margin: 0;
+}
+
+/* Contact Info Section */
+.contact-info {
+    max-width: 400px;
+    margin-left: 3rem;
+}
+
+.info-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #8b7355;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .contact-main-content {
+        padding: 1.5rem;
+    }
+    
+    .team-showcase {
+        margin-bottom: 2rem;
+    }
+    
+    .showcase-header {
+        padding: 1.5rem;
+    }
+    
+    .cta-content {
+        max-width: 500px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-main-content {
+        padding: 1rem;
+    }
+    
+    .team-showcase {
+        margin-bottom: 2rem;
+    }
+    
+    .directors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .director-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-main-content {
+        padding: 1.5rem;
+    }
+    
+    .director-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    
+    .director-info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .director-info p {
+        font-size: 0.85rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-icon {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .directors-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .director-card {
+        padding: 1.2rem;
+    }
+    
+    .contact-section {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .contact-main-content {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .directors-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .director-card {
+        padding: 1rem;
+    }
+    
+    .contact-section {
+        padding: 1rem 0.5rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-title {
+        font-size: 1.3rem;
+    }
+
+    .form-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .submit-btn {
+        padding: 10px 20px;
+    }
+}
+
+/* Legacy Styles (For compatibility with old About/Projects sections) */
+.aboutDescHead,
+.aboutHistoryHead {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #8b7355;
+    margin-bottom: 2rem;
+}
+
+.aboutDesc,
+.aboutText1,
+.aboutText2,
+.aboutText3,
+.aboutText4,
+.aboutText5 {
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+
+.project1,
+.project2,
+.project3 {
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+}
+
+.project1 h1,
+.project2 h1,
+.project3 h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #8b7355;
+    margin-bottom: 2rem;
+}
+
+p {
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+
+.photoContainer1 {
+    display: flex;
+    max-width: 100%;
+    gap: 3rem;
+    padding: 2rem;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.projectImage1 {
+    width: 20%;
+    height: 20%;
+    border: none;
+    border-radius: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photoContainer1 .projectImage1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cn12 {
+    margin: 5%;
+    padding: 2rem;
+}
+
+.cn11 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 2rem;
+}
+
+.cn13 {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.8;
+}
+
+/* Mobile contact view */
+@media screen and (max-width: 932px) {
+    .cn12 {
+        width: 90%;
+        height: 100%;
+        text-align: center;
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+    .cn11 {
+        padding: 1rem 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c2c2c;
+    }
+    .cn13 {
+        width: 100%;
+        height: auto;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        color: #555555;
+        font-weight: 500;
+    }
+
+    .photoContainer1 {
+        display: flex;
+        max-width: 100%;
+        gap: 1.5rem;
+        padding: 1rem;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .projectImage1 {
+        width: 60%;
+        height: 60%;
+        border: none;
+        border-radius: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .photoContainer1 .projectImage1:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    #hide1 {
+        display: none;
+    }
+}
